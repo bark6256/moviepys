@@ -1,11 +1,5 @@
+from movie_model import MovieModel
 import requests
-
-class MovieModel:
-    def __init__(self,title, rating, small_cover_image, summary):
-        self.title = title
-        self.rating = rating
-        self.small_cover_image = small_cover_image
-        self.summary = summary
 
 def callMovieApi():
     url = f'''
@@ -16,7 +10,7 @@ def callMovieApi():
     responseDict = response.json()
     movieapi = responseDict["data"]["movies"]
 
-    return movieapi
+    return convert_model(movieapi)
     
         
 

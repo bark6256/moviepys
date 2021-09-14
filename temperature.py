@@ -5,7 +5,7 @@ class Temp:
     def __init__(self, temp):
         self.temp = temp
 
-def gettemp():
+def getTemp():
     url = '''
         https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=%EC%98%A8%EB%8F%84
     '''

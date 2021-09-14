@@ -1,13 +1,12 @@
 from flask import Flask
 from flask.templating import render_template
 import movie_api as mapi
-import temp
+import temperature
 app = Flask(__name__)
 
 @app.route("/")
 def index():
-    movieapi=mapi.callMovieApi()
-    return render_template("index.html", movies=mapi.convert_model(movieapi), temp=temp.gettemp()) 
+    return render_template("index.html", movieapi=mapi.callMovieApi(), temp=temperature.getTemp()) 
 
 if __name__ == "__main__":
     app.run(debug=True)
