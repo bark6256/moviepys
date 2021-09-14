@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     movieapi=mapi.callMovieApi()
-    return render_template("index.html", movies=mapi.convert_model(movieapi)) 
+    return render_template("index.html", movies=mapi.convert_model(movieapi), temp=temp.gettemp()) 
 
 if __name__ == "__main__":
     app.run(debug=True)
