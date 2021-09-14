@@ -21,7 +21,7 @@ def callMovieApi():
         
 
 def convert_model(movieapi):
-    list = {}
+    list = []
     for movie in movieapi:
         movie_model = MovieModel(
             movie["title"],
@@ -29,7 +29,6 @@ def convert_model(movieapi):
             movie["small_cover_image"],
             movie["summary"]
         )
-        list.update(movie_model.__dict__)
+        list.append(movie_model)
 
-    print(list)
     return list
